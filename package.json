@@ -1,0 +1,19 @@
+{
+  "name": "country-info-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "cypress": "^15.14.2",
+    "happy-dom": "^20.9.0",
+    "vite": "^8.0.12",
+    "vitest": "^4.1.6"
+  }
+}
