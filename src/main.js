@@ -24,7 +24,7 @@ let allCountries = [];
 // Load countries
 button.addEventListener("click", async () => {
 
-  container.textContent = "Loading...";
+container.innerHTML = `<p class="loading">Loading countries...</p>`;
 
   try {
 

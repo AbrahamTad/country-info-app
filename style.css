@@ -145,3 +145,16 @@ nav a:hover {
 .back-link:hover {
   background: #1e40af;
 }
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #64748b;
+}
+
+.loading {
+  text-align: center;
+  font-size: 18px;
+  color: #1d4ed8;
+  font-weight: bold;
+}

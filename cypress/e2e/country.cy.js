@@ -50,7 +50,7 @@ describe("World Explorer App", () => {
     // Check URL and content
     cy.url().should("include", "/about.html");
 
-    cy.contains("About Country Info App").should("be.visible");
+    cy.contains("About World Explorer App").should("be.visible");
 
     // Go back home
     cy.contains("Back home").click();
