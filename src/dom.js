@@ -54,7 +54,10 @@ export function createCountryElement(country) {
 
 // Render countries to page
 export function renderCountries(countries, container) {
-  container.innerHTML = "";
+  if (countries.length === 0) {
+    container.innerHTML = `<p class="empty-message">No countries found.</p>`;
+    return;
+  }
 
   countries.slice(0, 12).forEach((country) => {
     const countryElement = createCountryElement(country);
