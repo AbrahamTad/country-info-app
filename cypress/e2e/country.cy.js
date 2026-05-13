@@ -85,4 +85,12 @@ describe("World Explorer App", () => {
 
     cy.contains("World Explorer App").should("be.visible");
   });
+  // Test loading state
+  it("should show loading text when user clicks button", () => {
+    cy.visit("http://localhost:5173");
+
+    cy.get("#loadCountriesBtn").click();
+
+    cy.contains("Loading countries").should("exist");
+  });
 });
