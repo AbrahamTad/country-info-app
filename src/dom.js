@@ -1,45 +1,64 @@
-// Import helper function
 import { formatCountryName } from "./utils.js";
 
-// Create small intro text
+// Create intro text
 export function createCountryIntro(country) {
   const countryName = country.name.common;
-  const region = country.region || "unknown region";
-  const subregion = country.subregion || "unknown area";
+  const region = country.region || "Unknown";
+  const subregion = country.subregion || "Unknown";
 
   return `${countryName} is located in ${region}, specifically in ${subregion}.`;
 }
 
-// Create HTML element for one country
+// Create country card
 export function createCountryElement(country) {
-  // Create div element
   const div = document.createElement("div");
 
   div.className = "country";
 
-  // Get country data
   const countryName = country.name.common;
+
   const capital = country.capital?.[0] || "No capital";
 
-  // Add HTML inside div
+  const region = country.region || "Unknown";
+
+  const population = country.population?.toLocaleString() || "Unknown";
+
+  const languages = country.languages
+    ? Object.values(country.languages).join(", ")
+    : "Unknown";
+
+  const flag = country.flags?.png || "";
+
   div.innerHTML = `
-    <h3>${formatCountryName(countryName)}</h3>
-    <p>Capital: ${capital}</p>
+    <img src="${flag}" class="flag" />
+
+    <div>
+      <h3>${formatCountryName(countryName)}</h3>
+
+      <p><strong>Capital:</strong> ${capital}</p>
+
+      <p><strong>Region:</strong> ${region}</p>
+
+      <p><strong>Population:</strong> ${population}</p>
+
+      <p><strong>Languages:</strong> ${languages}</p>
+
+      <p class="intro">
+        ${createCountryIntro(country)}
+      </p>
+    </div>
   `;
 
   return div;
 }
 
-// Render countries to HTML page
+// Render countries to page
 export function renderCountries(countries, container) {
-  // Clear old content
   container.innerHTML = "";
 
-  // Loop through countries
   countries.slice(0, 12).forEach((country) => {
     const countryElement = createCountryElement(country);
 
-    // Add country to page
     container.appendChild(countryElement);
   });
 }
