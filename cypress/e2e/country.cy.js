@@ -1,11 +1,20 @@
-describe("Country Info App", () => {
-  it("should load countries when user clicks button", () => {
+describe("World Explorer App", () => {
+  it("should load many countries when user clicks button", () => {
     cy.visit("http://localhost:5173");
 
     cy.get("#loadCountriesBtn").click();
 
-    cy.get("#countries").should("not.be.empty");
+    cy.get(".country").should("have.length", 12);
+    cy.get(".country").first().should("contain.text", "Capital");
+  });
 
-    cy.get(".country").should("exist");
+  it("should search country by name", () => {
+    cy.visit("http://localhost:5173");
+
+    cy.get("#loadCountriesBtn").click();
+
+    cy.get("#searchInput").type("Sweden");
+
+    cy.get(".country").should("contain.text", "SWEDEN");
   });
 });
