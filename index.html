@@ -1,32 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>World Explorer App</title>
   <link rel="stylesheet" href="/style.css" />
 </head>
-<body>
-  <header>
-    <h1>World Explorer App</h1>
-    <p>Search and explore countries around the world</p>
-  </header>
 
-  <main>
+<body>
+
+<header>
+  <h1>World Explorer App</h1>
+  <p>Search and explore countries around the world</p>
+</header>
+
+<main>
+
+  <div class="search-area">
     <input
       id="searchInput"
       type="text"
       placeholder="Search country..."
     />
 
-    <button id="loadCountriesBtn">Load Countries</button>
+    <button id="loadCountriesBtn">
+      Load Countries
+    </button>
+  </div>
 
-    <div id="countries"></div>
-  </main>
+  <div id="countries"></div>
 
-  <nav>
-    <a href="/about.html">About page</a>
-  </nav>
+</main>
 
-  <script type="module" src="/src/main.js"></script>
+<nav>
+  <a href="/about.html">About page</a>
+  <a href="/contact.html">Contact</a>
+</nav>
+
+<script type="module" src="/src/main.js"></script>
+
 </body>
 </html>

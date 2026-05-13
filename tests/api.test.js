@@ -1,21 +1,18 @@
-// Import Vitest functions
 import { describe, it, expect, vi } from "vitest";
 
-// Import API function
 import { fetchCountries } from "../src/api.js";
 
-// Group API tests
 describe("API tests", () => {
-  // Test API request
-  it("should fetch countries from API", async () => {
-    // Fake API response
+  it("should fetch countries", async () => {
     global.fetch = vi.fn(() =>
       Promise.resolve({
         ok: true,
         json: () =>
           Promise.resolve([
             {
-              name: { common: "Sweden" },
+              name: {
+                common: "Sweden",
+              },
             },
           ]),
       }),

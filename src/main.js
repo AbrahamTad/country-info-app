@@ -1,45 +1,65 @@
-// Import functions
 import { fetchCountries } from "./api.js";
-import { renderCountries } from "./dom.js";
-import { filterCountries } from "./utils.js";
 
-// Select HTML elements
-const button = document.querySelector("#loadCountriesBtn");
+import {
+  renderCountries
+} from "./dom.js";
 
-const container = document.querySelector("#countries");
+import {
+  filterCountries
+} from "./utils.js";
 
-const searchInput = document.querySelector("#searchInput");
+// Select elements
+const button =
+  document.querySelector("#loadCountriesBtn");
 
-// Store all countries
+const container =
+  document.querySelector("#countries");
+
+const searchInput =
+  document.querySelector("#searchInput");
+
+// Store countries
 let allCountries = [];
 
-// Load countries when button is clicked
+// Load countries
 button.addEventListener("click", async () => {
+
   container.textContent = "Loading...";
 
   try {
-    // Fetch countries from API
-    allCountries = await fetchCountries();
 
-    // Get search text
-    const searchText = searchInput.value;
+    allCountries =
+      await fetchCountries();
 
-    // Filter countries
-    const filteredCountries = filterCountries(allCountries, searchText);
+    const searchText =
+      searchInput.value;
 
-    // Show countries on page
-    renderCountries(filteredCountries, container);
+    const filteredCountries =
+      filterCountries(allCountries, searchText);
+
+    renderCountries(
+      filteredCountries,
+      container
+    );
+
   } catch (error) {
-    // Show error message
-    container.textContent = "Something went wrong";
+
+    container.textContent =
+      "Something went wrong";
   }
 });
 
-// Search countries while typing
+// Search while typing
 searchInput.addEventListener("input", () => {
-  const searchText = searchInput.value;
 
-  const filteredCountries = filterCountries(allCountries, searchText);
+  const searchText =
+    searchInput.value;
 
-  renderCountries(filteredCountries, container);
+  const filteredCountries =
+    filterCountries(allCountries, searchText);
+
+  renderCountries(
+    filteredCountries,
+    container
+  );
 });
