@@ -13,7 +13,11 @@ button.addEventListener("click", async () => {
 
   try {
     allCountries = await fetchCountries();
-    renderCountries(allCountries, container);
+
+    const searchText = searchInput.value;
+    const filteredCountries = filterCountries(allCountries, searchText);
+
+    renderCountries(filteredCountries, container);
   } catch (error) {
     container.textContent = "Something went wrong";
   }
