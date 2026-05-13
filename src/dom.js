@@ -6,8 +6,12 @@ export function createCountryElement(country) {
   div.className = "country";
 
   const countryName = country.name.common;
+  const capital = country.capital?.[0] || "No capital";
 
-  div.textContent = formatCountryName(countryName);
+  div.innerHTML = `
+    <h3>${formatCountryName(countryName)}</h3>
+    <p>Capital: ${capital}</p>
+  `;
 
   return div;
 }
@@ -15,9 +19,8 @@ export function createCountryElement(country) {
 export function renderCountries(countries, container) {
   container.innerHTML = "";
 
-  countries.slice(0, 5).forEach((country) => {
+  countries.slice(0, 12).forEach((country) => {
     const countryElement = createCountryElement(country);
-
     container.appendChild(countryElement);
   });
 }
