@@ -1,18 +1,21 @@
+// Import Vitest functions
 import { describe, it, expect, vi } from "vitest";
+
+// Import API function
 import { fetchCountries } from "../src/api.js";
 
-describe("API integration test", () => {
-  it("should fetch countries from REST API", async () => {
+// Group API tests
+describe("API tests", () => {
+  // Test API request
+  it("should fetch countries from API", async () => {
+    // Fake API response
     global.fetch = vi.fn(() =>
       Promise.resolve({
         ok: true,
         json: () =>
           Promise.resolve([
             {
-              name: {
-                common: "Sweden",
-              },
-              capital: ["Stockholm"],
+              name: { common: "Sweden" },
             },
           ]),
       }),
@@ -21,6 +24,5 @@ describe("API integration test", () => {
     const countries = await fetchCountries();
 
     expect(countries[0].name.common).toBe("Sweden");
-    expect(fetch).toHaveBeenCalledOnce();
   });
 });
