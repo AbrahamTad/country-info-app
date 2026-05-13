@@ -93,4 +93,14 @@ describe("World Explorer App", () => {
 
     cy.contains("Loading countries").should("exist");
   });
+
+  // Test no results search 
+  it("should show no countries found when search has no result", () => {
+    cy.visit("http://localhost:5173");
+
+    cy.get("#searchInput").type("zzzzzz");
+    cy.get("#loadCountriesBtn").click();
+
+    cy.contains("No countries found.").should("be.visible");
+  });
 });

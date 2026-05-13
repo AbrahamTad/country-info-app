@@ -146,15 +146,23 @@ nav a:hover {
   background: #1e40af;
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #64748b;
-}
-
 .loading {
   text-align: center;
   font-size: 18px;
   color: #1d4ed8;
   font-weight: bold;
+}
+.empty-message {
+  text-align: center;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  color: #64748b;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #64748b;
 }
