@@ -27,16 +27,17 @@ describe("World Explorer App", () => {
     cy.get(".country").should("contain.text", "SWEDEN");
   });
 
-  // Test intro text rendering
-  it("should show intro text", () => {
-    // Open homepage
+  // Test country details
+  it("should show country details", () => {
     cy.visit("http://localhost:5173");
 
-    // Load countries
     cy.get("#loadCountriesBtn").click();
 
-    // Check intro text
-    cy.get(".country").first().should("contain.text", "located in");
+    cy.get(".country").first().should("contain.text", "Capital");
+
+    cy.get(".country").first().should("contain.text", "Region");
+
+    cy.get(".country").first().should("contain.text", "Population");
   });
 
   // Test About page navigation
