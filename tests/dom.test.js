@@ -1,10 +1,5 @@
-// Import Vitest functions
 import { describe, it, expect } from "vitest";
-
-// Import happy-dom
 import { Window } from "happy-dom";
-
-// Import DOM function
 import { createCountryElement } from "../src/dom.js";
 
 // Create fake browser window

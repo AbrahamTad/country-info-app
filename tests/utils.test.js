@@ -1,7 +1,4 @@
-// Import Vitest functions
 import { describe, it, expect } from "vitest";
-
-// Import functions to test
 import {
   formatCountryName,
   countCountries,

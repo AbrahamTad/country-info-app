@@ -7,40 +7,77 @@
 </head>
 
 <body>
+  <!-- Hero / top section -->
+  <header class="hero">
+    <div class="badge">🌍 Explore the World</div>
 
-<header>
-  <h1>World Explorer App</h1>
-  <p>Search and explore countries around the world</p>
-</header>
+    <h1>World Explorer App</h1>
 
-<main>
+    <p>
+     Discover countries, capitals, flags and population around the world.
+    </p>
+  </header>
 
-  <div class="search-area">
-    <input
-      id="searchInput"
-      type="text"
-      placeholder="Search country..."
-    />
+  <!-- Main app section -->
+  <main>
+    <!-- Search and button -->
+    <section class="search-panel">
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Search country..."
+      />
 
-    <button id="loadCountriesBtn">
-      Load Countries
-    </button>
+      <button id="loadCountriesBtn">
+        Load Countries
+      </button>
+    </section>
+
+    <!-- Country data will render here -->
+    <section id="countries"></section>
+
+    <!-- Simple project info cards -->
+    <!-- Information cards -->
+<section class="info-cards">
+
+  <div class="info-card">
+    <h3>🌍 Discover Countries</h3>
+
+    <p>
+      Search countries and learn simple facts about them.
+    </p>
   </div>
 
-  <div id="countries"></div>
+  <div class="info-card">
+    <h3>🏙 Capitals & Regions</h3>
 
-</main>
+    <p>
+      Explore capital cities and regions from around the world.
+    </p>
+  </div>
 
-<nav>
-  <a href="/about.html">About page</a>
-  <a href="/contact.html">Contact</a>
-</nav>
+  <div class="info-card">
+    <h3>🚩 Flags & Population</h3>
 
-<script type="module" src="/src/main.js"></script>
+    <p>
+      View country flags and population information easily.
+    </p>
+  </div>
 
-<footer>
-  <p>World Explorer App © 2026</p>
-</footer>
+</section>
+  </main>
 
+  <!-- Page navigation -->
+  <nav>
+    <a href="/about.html">About page</a>
+    <a href="/contact.html">Contact</a>
+  </nav>
+
+  <!-- Footer -->
+  <footer>
+    <p>🌎 World Explorer App © 2026</p>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
 </body>
 </html>
