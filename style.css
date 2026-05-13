@@ -1,52 +1,64 @@
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  background-color: #f4f7fb;
-  color: #222;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
 }
 
 header {
-  background-color: #1d4ed8;
+  background: #1d4ed8;
   color: white;
-  padding: 30px;
   text-align: center;
+  padding: 40px;
 }
 
 main {
-  max-width: 900px;
-  margin: 30px auto;
+  max-width: 1000px;
+  margin: auto;
   padding: 20px;
 }
 
+.search-area {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
 input {
-  padding: 10px;
-  width: 60%;
-  margin-right: 10px;
+  flex: 1;
+  padding: 12px;
 }
 
 button {
-  padding: 10px 16px;
+  padding: 12px;
+  background: #1d4ed8;
+  color: white;
+  border: none;
   cursor: pointer;
 }
 
 #countries {
-  margin-top: 20px;
   display: grid;
-  gap: 15px;
+  gap: 20px;
 }
 
 .country {
+  display: flex;
+  gap: 20px;
   background: white;
-  padding: 15px;
-  border-radius: 8px;
-  border-left: 5px solid #1d4ed8;
+  padding: 20px;
+  border-radius: 10px;
 }
 
-.country h3 {
-  margin: 0 0 8px;
+.flag {
+  width: 100px;
+  object-fit: cover;
 }
 
 nav {
   text-align: center;
-  margin-bottom: 30px;
+  margin: 20px;
+}
+
+nav a {
+  margin: 10px;
 }
