@@ -2,6 +2,7 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #f4f7fb;
+  color: #1f2937;
 }
 
 header {
@@ -9,6 +10,16 @@ header {
   color: white;
   text-align: center;
   padding: 40px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 48px;
+}
+
+header p {
+  margin-top: 10px;
+  font-size: 18px;
 }
 
 main {
@@ -26,14 +37,23 @@ main {
 input {
   flex: 1;
   padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 16px;
 }
 
 button {
-  padding: 12px;
+  padding: 12px 18px;
   background: #1d4ed8;
   color: white;
   border: none;
+  border-radius: 6px;
   cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #1e40af;
 }
 
 #countries {
@@ -47,18 +67,43 @@ button {
   background: white;
   padding: 20px;
   border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  align-items: flex-start;
 }
 
+/* Flag styling */
 .flag {
-  width: 100px;
+  width: 160px;
+  height: 100px;
   object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.country h3 {
+  margin-top: 0;
+  color: #1d4ed8;
+}
+
+.country p {
+  margin: 6px 0;
+  line-height: 1.5;
 }
 
 nav {
   text-align: center;
-  margin: 20px;
+  margin: 30px;
 }
 
 nav a {
   margin: 10px;
+  color: #1d4ed8;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
