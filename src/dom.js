@@ -1,15 +1,6 @@
 import { formatCountryName } from "./utils.js";
 
-// Create intro text
-export function createCountryIntro(country) {
-  const countryName = country.name.common;
-  const region = country.region || "Unknown";
-  const subregion = country.subregion || "Unknown";
-
-  return `${countryName} is located in ${region}, specifically in ${subregion}.`;
-}
-
-// Create country card
+// Create one country card
 export function createCountryElement(country) {
   const div = document.createElement("div");
 
@@ -19,18 +10,18 @@ export function createCountryElement(country) {
 
   const capital = country.capital?.[0] || "No capital";
 
-  const region = country.region || "Unknown";
+  const region = country.region || "Unknown region";
 
   const population = country.population?.toLocaleString() || "Unknown";
-
-  const languages = country.languages
-    ? Object.values(country.languages).join(", ")
-    : "Unknown";
 
   const flag = country.flags?.png || "";
 
   div.innerHTML = `
-    <img src="${flag}" class="flag" />
+    <img
+      class="flag"
+      src="${flag}"
+      alt="${countryName} flag"
+    />
 
     <div>
       <h3>${formatCountryName(countryName)}</h3>
@@ -40,12 +31,6 @@ export function createCountryElement(country) {
       <p><strong>Region:</strong> ${region}</p>
 
       <p><strong>Population:</strong> ${population}</p>
-
-      <p><strong>Languages:</strong> ${languages}</p>
-
-      <p class="intro">
-        ${createCountryIntro(country)}
-      </p>
     </div>
   `;
 
@@ -54,8 +39,11 @@ export function createCountryElement(country) {
 
 // Render countries to page
 export function renderCountries(countries, container) {
+  container.innerHTML = "";
+
   if (countries.length === 0) {
     container.innerHTML = `<p class="empty-message">No countries found.</p>`;
+
     return;
   }
 
